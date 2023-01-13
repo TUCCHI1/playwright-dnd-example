@@ -1,0 +1,21 @@
+{
+  "name": "playwright-dnd-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TUCCHI1/playwright-dnd-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TUCCHI1/playwright-dnd-example/issues"
+  },
+  "homepage": "https://github.com/TUCCHI1/playwright-dnd-example#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.29.2"
+  }
+}
