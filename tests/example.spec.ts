@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { dragAndDrop } from "./utils/utils";
 
 test("drag-and-drop test", async ({ page }) => {
   // navigating to the Ant slider component test page
@@ -18,14 +19,8 @@ test("drag-and-drop test", async ({ page }) => {
   const sliderBoundingBox = await slider.boundingBox();
 
   // performing the drag-and-drop interaction
-  await sliderHandle.dragTo(sliderHandle, {
-    force: true,
-    targetPosition: {
-      // moving the slider to the target value in %
-      x: sliderBoundingBox ? sliderBoundingBox.width * targetValue : 0,
-      y: 0
-    }
-  })
+  sliderBoundingBox
+    && await dragAndDrop(page, sliderHandle, sliderHandle, { x: sliderBoundingBox.width * targetValue, y: 0 });
 
   // retrieving the input HTML element
   const input = page.locator(".ant-input-number-input").first();
